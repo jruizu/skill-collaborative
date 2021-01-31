@@ -24,10 +24,16 @@
 </body>
 <script>
    
- 
+    const intentos_permitidos =  3;
+    var intentados = 0;
     document.getElementById("getNumber").addEventListener('click', ()=>{
-
+        if(intentados >= 3){
+                alert("Has alcanzado el numero maximo de intentos");
+                return;
+            }
+        intentados++;
         let numberLot = '';
+        let numberBaloto = '';
         for(let i=0; i<4; i++){
             numberLot += `${random(0,9)}`
         }
